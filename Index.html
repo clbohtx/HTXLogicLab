@@ -147,6 +147,7 @@ table.truth td.out-1{color:var(--signal);font-weight:600;}
   border:1px solid var(--line);
   border-radius:12px;
   padding:26px clamp(16px,4vw,30px) 30px;
+  margin-bottom:36px;
   position:relative;
   box-shadow:0 1px 0 rgba(255,255,255,.03) inset, 0 20px 40px rgba(0,0,0,.32);
 }
@@ -157,7 +158,8 @@ table.truth td.out-1{color:var(--signal);font-weight:600;}
   border-radius:0 0 2px 2px;
   opacity:.8;
 }
-.lab h2{font-size:24px;margin:0 0 6px;}
+.lab h2{font-size:24px;margin:0 0 4px;}
+.lab-subtitle{font-size:13px;color:var(--muted);margin:0 0 14px;font-style:italic;}
 .lab > p{font-size:14px;color:var(--body-text);line-height:1.55;margin:0 0 22px;max-width:60ch;}
 
 .switch-row{
@@ -248,50 +250,9 @@ footer{margin-top:34px;font-size:14px;color:var(--body-text);}
 
 <div class="wrap">
 
-  <header class="page-head">
-    <p class="eyebrow">AND, OR og NOT</p>
-    <h1>Digital logik, kort fortalt</h1>
-    <p class="lede">De tre operatorer er de eneste byggesten, en computer har brug for til at tage beslutninger. Herunder er hver af dem forklaret i én sætning — og nedenfor kan du selv styre et lille kredsløb, der bruger AND, OR og NOT til at tænde en diode.</p>
-  </header>
-
-  <section class="gates">
-    <article class="gate-card">
-      <h3>AND <span class="gate-sym">A · B</span></h3>
-      <p>Output er kun 1, hvis <strong>begge</strong> input er 1.</p>
-      <table class="truth">
-        <tr><th>A</th><th>B</th><th>A AND B</th></tr>
-        <tr><td>0</td><td>0</td><td>0</td></tr>
-        <tr><td>0</td><td>1</td><td>0</td></tr>
-        <tr><td>1</td><td>0</td><td>0</td></tr>
-        <tr><td>1</td><td>1</td><td class="out-1">1</td></tr>
-      </table>
-    </article>
-
-    <article class="gate-card">
-      <h3>OR <span class="gate-sym">A + B</span></h3>
-      <p>Output er 1, hvis <strong>mindst ét</strong> input er 1.</p>
-      <table class="truth">
-        <tr><th>A</th><th>B</th><th>A OR B</th></tr>
-        <tr><td>0</td><td>0</td><td>0</td></tr>
-        <tr><td>0</td><td>1</td><td class="out-1">1</td></tr>
-        <tr><td>1</td><td>0</td><td class="out-1">1</td></tr>
-        <tr><td>1</td><td>1</td><td class="out-1">1</td></tr>
-      </table>
-    </article>
-
-    <article class="gate-card">
-      <h3>NOT <span class="gate-sym">¬A</span></h3>
-      <p>Output er det <strong>modsatte</strong> af input — vender en 0 til en 1.</p>
-      <table class="truth">
-        <tr><th>A</th><th>NOT A</th></tr>
-        <tr><td>0</td><td class="out-1">1</td></tr>
-        <tr><td>1</td><td>0</td></tr>
-      </table>
-    </article>
-  </section>
-
   <section class="lab">
     <h2>Løs logikken, så dioden tænder</h2>
+    <p class="lab-subtitle">Læs mere nedenfor...</p>
     <p>Fire kontakter, K1–K4, fødes ind i kredsløbet: K1 og K3 går gennem en AND-port, mens K2 og K4 går gennem en OR-port efterfulgt af en NOT-port. De to grene mødes i en sidste AND-port, som tænder dioden. Dioden lyser altså når <strong>(K1 AND K3) AND NOT(K2 OR K4)</strong> er sand — prøv at finde en kombination, der tænder den.</p>
 
     <div class="switch-row" id="switchRow">
@@ -342,6 +303,49 @@ footer{margin-top:34px;font-size:14px;color:var(--body-text);}
 
     <div class="readout" id="readout" aria-live="polite" hidden></div>
   </section>
+
+  <header class="page-head">
+    <p class="eyebrow">AND, OR og NOT</p>
+    <h1>Digital logik, kort fortalt</h1>
+    <p class="lede">De tre operatorer er de eneste byggesten, en computer har brug for til at tage beslutninger. Herunder er hver af dem forklaret i én sætning — og nedenfor kan du selv styre et lille kredsløb, der bruger AND, OR og NOT til at tænde en diode.</p>
+  </header>
+
+  <section class="gates">
+    <article class="gate-card">
+      <h3>AND <span class="gate-sym">A · B</span></h3>
+      <p>Output er kun 1, hvis <strong>begge</strong> input er 1.</p>
+      <table class="truth">
+        <tr><th>A</th><th>B</th><th>A AND B</th></tr>
+        <tr><td>0</td><td>0</td><td>0</td></tr>
+        <tr><td>0</td><td>1</td><td>0</td></tr>
+        <tr><td>1</td><td>0</td><td>0</td></tr>
+        <tr><td>1</td><td>1</td><td class="out-1">1</td></tr>
+      </table>
+    </article>
+
+    <article class="gate-card">
+      <h3>OR <span class="gate-sym">A + B</span></h3>
+      <p>Output er 1, hvis <strong>mindst ét</strong> input er 1.</p>
+      <table class="truth">
+        <tr><th>A</th><th>B</th><th>A OR B</th></tr>
+        <tr><td>0</td><td>0</td><td>0</td></tr>
+        <tr><td>0</td><td>1</td><td class="out-1">1</td></tr>
+        <tr><td>1</td><td>0</td><td class="out-1">1</td></tr>
+        <tr><td>1</td><td>1</td><td class="out-1">1</td></tr>
+      </table>
+    </article>
+
+    <article class="gate-card">
+      <h3>NOT <span class="gate-sym">¬A</span></h3>
+      <p>Output er det <strong>modsatte</strong> af input — vender en 0 til en 1.</p>
+      <table class="truth">
+        <tr><th>A</th><th>NOT A</th></tr>
+        <tr><td>0</td><td class="out-1">1</td></tr>
+        <tr><td>1</td><td>0</td></tr>
+      </table>
+    </article>
+  </section>
+
 
   <footer hidden>Kredsløbet bruger alle tre operatorer sammen: to AND-porte, én OR-port og én NOT-port, der tilsammen afgør om dioden lyser.</footer>
 
